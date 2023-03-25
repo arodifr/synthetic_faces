@@ -1,4 +1,4 @@
-### FUNCTIONS FOR PAPER TAL
+### Functions used in the paper "Reproducible synthetic faces for research in forensic anthropology"
 
 # 1. Data setup
 imag_tem <- function(i_path){
@@ -391,6 +391,8 @@ safety <- function(facesO, facesidO, facesS, facesidS, o_path,
 
 
 all_plots <- function(Outil, list_Sutil, list_Ssafe, o_path){
+  # This function generates Figure 3 in the paper 
+  
   utilDF <- rbind(Outil, bind_rows(list_Sutil))
   safeDF <- rbind(Outil, bind_rows(list_Ssafe))
   
