@@ -1,4 +1,4 @@
-### FUNCTIONS FOR PAPER TAL
+### Functions used in the paper "Reproducible synthetic faces for research in forensic anthropology"
 
 # 1. Data setup
 imag_tem <- function(i_path){
@@ -77,8 +77,6 @@ synt_face <- function(nparent, facesO, o_path, nm, noriginal){
 formato <- function(data){
   format(data, digit = 2)
 }
-
-# euclidean <- function(a, b) sqrt(sum((a - b)^2))
 
 
 util_subsamp <- function(facesO, facesidO, facesS, facesidS, o_path, lm_n,  seed, nreplica, nparent){
