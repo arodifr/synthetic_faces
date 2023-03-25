@@ -1,9 +1,8 @@
 library(targets)
 
-#tar_delete()
+# runs the workflow
 tar_make()
 
-#tar_load(data_sub[[1]])
-
+# visualizes the workflow
 tar_visnetwork()
 
