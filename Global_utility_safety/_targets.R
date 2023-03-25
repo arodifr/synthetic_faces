@@ -7,10 +7,6 @@ source("./R/functions.R")
 # Packages needed
 tar_option_set(packages = c("geomorph", "tidyverse", "webmorphR", "ggplot2"))
 
-# c("dplyr", "facefuns", "geomorph", 
-#   "tidyverse", "webmorphR", "ggplot2"))
-
-
 path_data = "./Data/"
 
 paste(path_data, "synt_tem2/", sep = "")
@@ -20,7 +16,6 @@ list(
   
   #1 reading original data
   tar_target(
-    #target name, function
     dataO, imag_tem(i_path = path_data)
   ),
   
@@ -98,22 +93,17 @@ list(
                   lm_n = 70, seed = 1, nreplica = 30, nparent = 4, nsampSize = 12, nm = "S4_")
   ),
   
+  #5 list of the utility results for each parent type
   tar_target(
     utility_lists, list(util2[util2$Type == "S2",], util3[util3$Type == "S3",], util4[util4$Type == "S4",])
   ),
   
+  #6 list of the safety results for each parent type
   tar_target(
     safety_lists, list(safe2[safe2$Type == "S2",], safe3[safe3$Type == "S3",], safe4[safe4$Type == "S4",])
   ),
-  # tar_target(
-  #   a, print(util2[util2$Type == "Original",])
-  # ),
-  # tar_target(
-  #   b, print(utility_lists)
-  # ),
-  # tar_target(
-  #   c, print(safety_lists)
-  # )
+  
+  #7 plotting the results (see Figure 3 within the paper)
   tar_target(
     allplots, all_plots(Outil = util2[util2$Type == "Original",], 
                         list_Sutil = utility_lists, 
