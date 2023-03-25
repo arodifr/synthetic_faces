@@ -1,8 +1,7 @@
-## this could be a stand alone script
-## It could be run after global utility and safety have been evaluated
-### this code is for selecting the subsample that will best replace
-## the original sample. 
-
+### this code selects the  subsample that will best replace the original sample
+## based on global and specific utility criteria.
+# This code could be executed after the Global_utility_safety workflow, 
+# but could also be a standalone script using the results reported in the paper.
 
 library(targets)
 source("./R/functions.R")
@@ -20,14 +19,14 @@ list(
     #target name, function
     dataO, imag_tem(i_path = path_data)
   ),
-  ##2 creating synthetic faces using 2, 3, and 4 parent faces
+  #2 creating synthetic faces using 3 parent faces
   tar_target(
     synt3, synt_face(nparent = 3, 
                      facesO = dataO[[1]], 
                      o_path = "./Data/synt_tem3/", 
                      nm = "S3_")
   ),
-  #3 useful samples
+  #3 selecting the useful samples
   tar_target(
     useful, util_subsamp(facesO = dataO[[1]],
                          facesidO = as.character(unlist(dataO[[2]])),
@@ -38,7 +37,7 @@ list(
   )
 )
 
-#to read the output information
+#to access the output information after running this code, use the following functions 
 #tar_read(useful) 
 #formato(tar_read(useful)[[1]][[1]])
 #formato(tar_read(useful)[[3]][[1]])
