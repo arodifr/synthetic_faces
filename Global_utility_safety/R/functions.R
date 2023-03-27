@@ -391,7 +391,7 @@ safety <- function(facesO, facesidO, facesS, facesidS, o_path,
 
 
 all_plots <- function(Outil, list_Sutil, list_Ssafe, o_path){
-  # This function generates Figure 3 in the paper 
+  # This function generates Figure 4 in the paper 
   
   utilDF <- rbind(Outil, bind_rows(list_Sutil))
   safeDF <- rbind(Outil, bind_rows(list_Ssafe))
@@ -400,11 +400,13 @@ all_plots <- function(Outil, list_Sutil, list_Ssafe, o_path){
   
   alls <- ggplot(utilDF, aes(x=distance, y = Type, fill = Type)) +
     geom_boxplot(color=paleta, fill=paleta, alpha=0.2) + theme_bw()+
-    xlim(0, 0.3) + coord_flip()
+    xlim(0, 0.3) + coord_flip()+
+  geom_jitter(color="black", size=0.4, alpha=0.9) 
   
   allr <- ggplot(safeDF, aes(x=distance, y = Type, fill = Type)) +
     geom_boxplot(color=paleta, fill=paleta, alpha=0.2) + theme_bw()+
-    xlim(0, 0.3) + coord_flip()
+    xlim(0, 0.3) + coord_flip()+
+  geom_jitter(color="black", size=0.4, alpha=0.9) 
   
   util_name <- "all_utilityPlot_faces.png"
   ggsave(filename = util_name, plot = print(alls), path = o_path, device = "png", width = 7, height = 7)
