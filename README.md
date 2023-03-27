@@ -4,12 +4,12 @@ Source code to generate all the analyzes in the article "The use of reproducible
 
 This paper presents reproducible methods to evaluate synthetic face databases drawing on forensic anthropology expertise both for the design of these methods and for proposing criteria that allow the scrutiny of these technologies in a transparent and accessible way.    
 
-From an anthropological perspective, we propose measurements of global and specific utility of the synthetic databases generated to mitigate diversity in face databases. The global utility of synthetic databases depends on whether they preserve similar morphological diversity to that observed in the original database, while their specific utility depends on whether they preserve a similar type of morphological shape variation to that in the original database.    
+From an anthropological perspective, we propose measurements of global and specific utility of the synthetic databases generated to mitigate diversity bias in face databases. The global utility of synthetic databases depends on whether they preserve similar morphological diversity to that observed in the original database, while their specific utility depends on whether they preserve a similar type of morphological shape variation to that in the original database.    
 
 Applying the workflows to the set of facial images of East Asian females found in **./Data/** folder will deliver the results presented in the article. These images are part of the Multi-Racial Mega-Resolution database (Strohminger et al. 2016) licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, and can be found at: https://osf.io/skbq2/    
 
 
-Both the global (Global_utility_safety) and the specific (Specific_utility) workflows contain three main files:
+Both the global (Global_utility_safety) and the specific (Specific_utility) utility workflows contain three main files:
 - **./R/Functions.R** contains all the custom functions used for the evaluations.    
 - **./_targets.R** integrates all the steps to follow for each of the evaluations (see workflow.png).      
 - **./tar_exe.R** runs all the steps to follow for each of the evaluations.    
