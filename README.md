@@ -1,6 +1,6 @@
-# Reproducible synthetic faces for research in forensic anthropology
+# Diversity of synthetic facial shapes.
 
-Source code to generate all the analyzes in the article "The use of reproducible synthetic faces for research in forensic anthropology".
+Source code to generate all the analyzes in the article "Synthetic shape diversity to find a balance between the privacy and utility of face databases".
 
 This paper presents reproducible methods to evaluate synthetic face databases drawing on forensic anthropology expertise both for the design of these methods and for proposing criteria that allow the scrutiny of these technologies in a transparent and accessible way.    
 
